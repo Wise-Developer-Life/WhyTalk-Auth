@@ -17,4 +17,9 @@ public class GlobalExceptionHandler {
         log.error("Catching unknown runtime exception.", e);
         return ResponseHandler.badRequest(ErrorCodeEnum.SYSTEM_ERROR);
     }
+
+    @ExceptionHandler(value = {AuthException.class})
+    public ResponseEntity<ReturnResponse<Object>> authExceptionHandler(AuthException e) {
+        return ResponseHandler.responseWithStatus(e.getCode(), e.getMessage(), e.getHttpStatus());
+    }
 }

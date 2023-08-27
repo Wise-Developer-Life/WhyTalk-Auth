@@ -2,6 +2,7 @@ package com.wisedevlife.whytalkauth.common.helper;
 
 import com.wisedevlife.whytalkauth.common.enums.ErrorCodeEnum;
 import com.wisedevlife.whytalkauth.dto.response.ReturnResponse;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 public class ResponseHandler {
@@ -28,5 +29,12 @@ public class ResponseHandler {
                 ReturnResponse.of(errorCodeEnum.getCode(), errorCodeEnum.getMessage(), false, null);
 
         return ResponseEntity.badRequest().body(response);
+    }
+
+    public static <T> ResponseEntity<ReturnResponse<T>> responseWithStatus(
+            int code, String message, HttpStatus httpStatus) {
+        ReturnResponse<T> response = ReturnResponse.of(code, message, false, null);
+
+        return ResponseEntity.status(httpStatus).body(response);
     }
 }

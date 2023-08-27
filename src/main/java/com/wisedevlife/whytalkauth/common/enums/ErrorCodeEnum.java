@@ -5,8 +5,11 @@ import lombok.Getter;
 @Getter
 public enum ErrorCodeEnum {
     SYSTEM_ERROR(-1, "system error"),
-    CHATROOM_NOT_FOUND_ERROR(404, "chatroom not found"),
-    CHATROOM_EXISTED_ERROR(409, "chatroom is already existed");
+    AUTH_JWT_FAILED(1001, "auth jwt token failed"),
+    AUTH_JWT_INVALID(1002, "jwt token invalid"),
+    AUTH_JWT_EXPIRED(1003, "jwt token expired"),
+    AUTH_JWT_UNSUPPORTED(1004, "jwt token unsupported"),
+    AUTH_JWT_EMPTY_CLAIMS(1004, "jwt token with no claims");
 
     private final int code;
     private final String message;

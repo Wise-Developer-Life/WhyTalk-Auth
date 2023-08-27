@@ -1,6 +1,12 @@
 package com.wisedevlife.whytalkauth.dto.response;
 
-public record RefreshTokenResponse(
-        String accessToken
-) {
+import com.wisedevlife.whytalkauth.entity.AuthInfo;
+
+public record RefreshTokenResponse(String accessToken, String refreshToken, long expiredIn) {
+    public static RefreshTokenResponse ofAuthInfo(AuthInfo authInfo) {
+        return new RefreshTokenResponse(
+                authInfo.getAccessToken(),
+                authInfo.getRefreshToken(),
+                authInfo.getExpiredIn().getSeconds());
+    }
 }

@@ -1,6 +1,12 @@
 package com.wisedevlife.whytalkauth.dto.response;
 
-public record SignInResponse(
-        String accessToken
-) {
+import com.wisedevlife.whytalkauth.entity.AuthInfo;
+
+public record SignInResponse(String accessToken, String refreshToken, long expiredIn) {
+    public static SignInResponse ofAuthInfo(AuthInfo authInfo) {
+        return new SignInResponse(
+                authInfo.getAccessToken(),
+                authInfo.getRefreshToken(),
+                authInfo.getExpiredIn().getSeconds());
+    }
 }

@@ -1,4 +1,4 @@
-package com.wisedevlife.whytalkauth.entity;
+package com.wisedevlife.whytalkauth.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

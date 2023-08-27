@@ -6,7 +6,7 @@ import com.wisedevlife.whytalkauth.dto.request.SignInRequest;
 import com.wisedevlife.whytalkauth.dto.response.RefreshTokenResponse;
 import com.wisedevlife.whytalkauth.dto.response.ReturnResponse;
 import com.wisedevlife.whytalkauth.dto.response.SignInResponse;
-import com.wisedevlife.whytalkauth.entity.AuthInfo;
+import com.wisedevlife.whytalkauth.model.AuthInfo;
 import com.wisedevlife.whytalkauth.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;

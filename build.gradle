@@ -41,6 +41,7 @@ ext {
 	caffeineVersion = '3.1.5'
 	prometheusVersion = '1.11.1'
 	springDocVersion = '2.2.0'
+	jjwtVersion = '0.11.5'
 }
 
 openApi {
@@ -59,6 +60,9 @@ dependencies {
 	implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springDocVersion}"
 	implementation "com.github.ben-manes.caffeine:caffeine:${caffeineVersion}"
 	implementation "org.projectlombok:lombok:${lombokVersion}"
+	implementation "io.jsonwebtoken:jjwt-api:${jjwtVersion}"
+	implementation "io.jsonwebtoken:jjwt-impl:${jjwtVersion}"
+	implementation "io.jsonwebtoken:jjwt-jackson:${jjwtVersion}"
 
 	annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 

@@ -1,11 +1,15 @@
 server:
     port: 8080
+why-talk:
+    app:
+        jwt-secret: whytalkauthservicjwtsecretismeJiYyDOM3OTfnG9TJ3zY8ifcdJPhmZUH6
+        jwt-issuer: "why-talk"
 spring:
     application:
         name: spring-boot-template
     datasource:
         driver-class-name: org.postgresql.Driver
-        url: jdbc:postgresql://localhost:5432/message
+        url: jdbc:postgresql://localhost:5432/auth
         username: root
         password: admin
         hikari:

@@ -1,13 +1,21 @@
 services:
-  user-database:
-    container_name: user-postgres
+  auth-database:
+    container_name: auth-postgres
     image: postgres
     restart: unless-stopped
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: admin
-      POSTGRES_DB: user
+      POSTGRES_DB: auth
     ports:
       - 5432:5432
     volumes:
       - ./storage/postgres-data:/var/lib/postgresql/data
+  auth-cache:
+    container_name: auth-redis
+    image: redis
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+    volumes:
+      - ./storage/redis-data:/data

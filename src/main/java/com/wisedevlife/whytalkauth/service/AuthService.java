@@ -1,6 +1,6 @@
 package com.wisedevlife.whytalkauth.service;
 
-import com.wisedevlife.whytalkauth.entity.AuthInfo;
+import com.wisedevlife.whytalkauth.model.AuthInfo;
 
 public interface AuthService {
     AuthInfo signIn(String username, String password);

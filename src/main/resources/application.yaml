@@ -1,5 +1,5 @@
 server:
-    port: 8080
+    port: 8082
 why-talk:
     app:
         jwt-secret: whytalkauthservicjwtsecretismeJiYyDOM3OTfnG9TJ3zY8ifcdJPhmZUH6
@@ -7,6 +7,22 @@ why-talk:
 spring:
     application:
         name: whytalk-auth
+    security:
+      oauth2:
+        client:
+          registration:
+              facebook:
+                client-id: 1370623027166225
+                client-secret: c5412b4725ffa8be8013b478c3994984
+                scope:
+                  - email
+                  - public_profile
+              google:
+                client-id: 268408722131-5r9jfi6liehsr9jfk3ddl8c6aqfbjcae.apps.googleusercontent.com
+                client-secret: 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
+                scope:
+                  - email
+
     datasource:
         driver-class-name: org.postgresql.Driver
         url: jdbc:postgresql://localhost:5432/auth

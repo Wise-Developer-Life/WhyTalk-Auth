@@ -9,7 +9,8 @@ public enum ErrorCodeEnum {
     AUTH_JWT_INVALID(1002, "jwt token invalid"),
     AUTH_JWT_EXPIRED(1003, "jwt token expired"),
     AUTH_JWT_UNSUPPORTED(1004, "jwt token unsupported"),
-    AUTH_JWT_EMPTY_CLAIMS(1004, "jwt token with no claims");
+    AUTH_JWT_EMPTY_CLAIMS(1004, "jwt token with no claims"),
+    OAUTH_AUTHENTICATION_FAILED(1005, "OAuth 2.0 authentication failed");
 
     private final int code;
     private final String message;
